@@ -12,9 +12,9 @@ foreach ($line in Get-Content .\filecodes.txt) {
     Get-ChildItem $file | Rename-Item -newname { $partofline[1] + " - Arquivo " + $_.Name }
 }
 ````
+<img alt="gif showing renaming happening automatically" height="300" src="https://github.com/DDanDev/batch-renaming-video-files-from-cameras/raw/main/script%20rename.gif" />
 
-
-If needed undo with following oneliner on terminal cli:
+If needed, undo with following oneliner on terminal cli:
 ```PowerShell
 dir -filter *.mov | rename-item -newname {$_.Name.Substring($_.Name.IndexOf(" - Arquivo ")+(" - Arquivo ").length)}
 ```
